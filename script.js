@@ -28,13 +28,13 @@ peer.on("open", () => {
 
 connectBtn.addEventListener("click", async () => {
   const recepientID = input.value;
-  myStream = await navigator.mediaDevices.getDisplayMedia({video: true});
+  myStream = await navigator.mediaDevices.getDisplayMedia({video: true, audio: true});
   initializeVideo(myStream);
   peer.call(input.value, myStream);
 });
 
 function initializeVideo(stream) {
-  video.muted = true;
+  video.muted = false;
   video.autoplay = true;
   video.srcObject = stream;
   video.controls = true;

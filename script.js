@@ -34,7 +34,6 @@ connectBtn.addEventListener("click", async () => {
 });
 
 function initializeVideo(stream) {
-  video.muted = false;
   video.autoplay = true;
   video.srcObject = stream;
   video.controls = true;
